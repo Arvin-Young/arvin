@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.mapper.UserMapper" >
+	<!--  招聘查询 -->
+	<select id="getUserList" resultType="map">
+		select bb.categoryName,aa.Re_num,aa.Re_serial,cc.sectionName,aa.workplace,aa.Actiontime,bb.position,bb.equirements,bb.categoryId from re_message aa 
+		left join category bb on aa.categoryId=bb.categoryId
+		left join section cc on bb.sectionId=cc.sectionId
+		order by categoryId asc
+	</select>
+	<!-- 发布资讯 -->
+	<insert id="issuemessage" parameterType="com.ssm.domain.User">
+	insert into information(headline,uptime,body,images) values(#{headline},#{uptime},#{body},#{images});
+	</insert>
+	<!-- 查看发布资讯 -->
+	<select id="lookissuemessage" resultType="map">
+		select *from information
+	</select>
+	<!-- 单表资讯查询 -->
+	<select id="Oneissuemessage" parameterType="com.ssm.domain.User" resultType="map">
+		select *from information where  informationId=#{informationId}
+	</select>
+	<!-- 单表招聘查询 -->
+	<select id="Onemessage" parameterType="com.ssm.domain.User" resultType="map">
+		select bb.categoryName,aa.Re_num,cc.sectionName,aa.workplace,aa.Actiontime,bb.position,bb.equirements,bb.categoryId from re_message aa 
+		left join category bb on aa.categoryId=bb.categoryId
+		left join section cc on bb.sectionId=cc.sectionId
+		where bb.categoryId=#{categoryId}
+		order by categoryId asc
+	</select>
+	<!-- 招聘删除 -->
+	<delete id="RemessageDelete" parameterType="com.ssm.domain.User">
+		delete from re_message where categoryId=${categoryId}
+	</delete>
+	<delete id="CategoryDelete" parameterType="com.ssm.domain.User">
+		delete from category where categoryId=${categoryId}
+	</delete>
+	<delete id="SectionDelete" parameterType="com.ssm.domain.User">
+		delete from section where sectionId=${sectionId}
+	</delete>
+	<!-- 部门查询 -->
+	<select id="looksection" resultType="map">
+		select*from section
+	</select>
+	<!--  职位查询 -->
+	<select id="lookposition" resultType="map">
+		select*from position
+	</select>
+	<!--  职位要求查询 -->
+	<select id="lookcategory"  parameterType="com.ssm.domain.User" resultType="map">
+		select*from category where categoryName='${categoryName}'
+	</select>
+	<!-- 添加招聘-->
+	<insert id="UpCategory" parameterType="com.ssm.domain.User">
+	insert into category(sectionId,categoryName,position,equirements) values(${sectionId},'${categoryName}','${position}','${equirements}');
+	</insert>
+	<insert id="UpRemessage" parameterType="com.ssm.domain.User">
+	insert into re_message(Re_num,categoryId,Actiontime) values('${Re_num}',${categoryId},GETDATE());
+	</insert>
+	<!-- 删除咨询 -->
+	<delete id="IssuemessageDelete" parameterType="com.ssm.domain.User">
+	delete from information where informationId=${informationId}
+	</delete>
+	<!-- 级联下拉表 -->
+	<select id="lookselect" parameterType="com.ssm.domain.User" resultType="map">
+	select positioId,categoryName from position where sectionId=${sectionId}
+	</select>
+</mapper>

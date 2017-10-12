@@ -1,0 +1,37 @@
+body,ul,li,dl,p,h1,h2,h3,h4,h5,a{margin:0;padding: 0;text-decoration: none;list-style: none; font-family:"微软雅黑";}
+
+
+.banner .nav_bg{ width:100%; height:90px; background-color:#000; opacity:0.6;z-index:1; position:absolute; border-bottom:1px solid  #353535;}
+.banner .nav{ width:80%; height:50px;z-index:2; margin:0 auto; position:relative; top:25px;}
+.banner .nav img{ display:block; height:90%;z-index:2; float:left;}
+.banner .nav .shouye{ background-color:transparent;border:0px solid white; padding:1% 3% 1% 3%;font-size:16px; color:white; font-family:"微软雅黑";z-index:2; position:relative; right:4%;float:right; outline:none;} 
+.banner .nav .shouye:hover{border-color:white; border-color:white;border-bottom:1px solid white;border-top:1px solid white;}
+.banner{ width:100%; background:url(../img/banner_recruit.png) no-repeat;background-size:100% 100%; height:600px;;}
+.banner .nav .zhaopin{ background-color:transparent; border:0px solid white; padding:1% 2% 1% 2%;font-size:16px; color:white; font-family:"Î¢ÈíÑÅºÚ";z-index:2; position:relative;float:right; right:4%; outline:none;} 
+.banner .nav .zhaopin:hover{border-color:white; color:white;border-top:1px solid white;border-bottom:1px solid white;}
+
+
+
+
+
+.recruit_bg{ width:100%; background-color:#f4f4f4;}
+.recruit_bg .recruit{ width:80%; margin:auto;}
+.recruit_bg .recruit a .more{ float:right; font-size:12px; font-family:"微软雅黑";}
+.recruit_bg .recruit a{ text-decoration:none; color:#222;}
+.recruit_bg .recruit .title{ width:100px; text-align:center; margin:auto; padding-top:3%; padding-bottom:2%;}
+.recruit_bg .recruit .title h3{ margin-bottom:-20%;}
+.recruit_bg .recruit .title p{ font-size:14px; text-align:center;margin:auto;}
+.recruit_bg .recruit .title hr{ width:26px; border:2px solid #9e9e9e; margin-top:-15%;}
+.recruit_bg .recruit .recruit_content{ width:80%; margin:auto;}
+.recruit_bg .recruit .recruit_content li{ height:150px; border-bottom:1px solid #e1e1e1; padding:2% 2% 2% 2%; margin-bottom:1%;}
+.recruit_bg .recruit .recruit_content li:hover{ background-color:#fafafa;}
+.recruit_bg .recruit .recruit_content li h2{ margin-bottom:1%;}
+.recruit_bg .recruit .recruit_content li h4{ margin-bottom:1%;}
+.recruit_bg .recruit .recruit_content li p{ display:block;font-family:"微软雅黑"; color:#222; font-size:14px;letter-spacing:1px;}
+.recruit_bg .recruit .recruit_content li .time{ font-size:12px; color:#666; padding-top:1%;}
+.recruit_bg .recruit .recruit_content li a{ list-style:none; color:#222;}
+
+
+.foot_bg{ background-color:#fff; width:100%; padding:1% 0 1% 0; margin-top:0%;}
+.foot_bg .foot{ width:80%; margin:auto; border: 0px; padding:2% 0 2% 0;}
+.foot_bg .foot p{ text-align:center; font-family:"微软雅黑"; font-size:14px; color:#222;}
